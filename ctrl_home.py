@@ -16,5 +16,11 @@ def index(): # função que gerencia rota
     if 'user' not in session:
         return redirect(url_for("auth.login"))
     
-    return render_template("index.html") # Renderiza um template
+    return render_template("dashboard/index.html") # Renderiza um template
     
+@bp.route("/dashboard") # cria uma rota para navegador https://127.0.0.1:5000/dashboard
+def dashboard(): # função que gerencia rota deve ser unica
+    """ Painel de Vendas """
+    #remova o login
+    
+    return render_template("dashboard/index.html", title="Painel de vendas") # Renderiza um template
